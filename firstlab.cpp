@@ -3,7 +3,7 @@
 #include <time.h>
 #include <iomanip>
 
-#define MAX 100
+#define MAX 1000
 
 using namespace std;
 
@@ -100,9 +100,9 @@ int main()
     for(int i = 0; i < MAX; i += block){
         for(int j = 0; j < MAX; j += block){
             for(int h = 0; h < MAX; h += block){
-                for(int i_ = i; i < min(i+block,MAX); i_++){
-                    for(int j_ = j; j < min(j+block,MAX); j_++){
-                        for(int h_ = h; h < min(h+block,MAX); h_++){
+                for(int i_ = i; i_ < min(i+block,MAX); i_++){
+                    for(int j_ = j; j_ < min(j+block,MAX); j_++){
+                        for(int h_ = h; h_ < min(h+block,MAX); h_++){
                             mar3[i_][j_] += mar1[i_][h_]*mar2[h_][j_];
                         }
                     }
